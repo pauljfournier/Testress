@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_3x3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_1x1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_2x2.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 90.0
+margin_right = 180.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 93.8111, 92.9229 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obstacle" parent="." instance=ExtResource( 2 )]
+position = Vector2( 162, 162 )
+
+[node name="Obstacle2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 162 )
+scale = Vector2( 2, 1 )
+constant_linear_velocity = Vector2( 126, 162 )
+
+[node name="Obstacle3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 90, 144 )
+
+[node name="Obstacle4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 36, 126 )
+
+[node name="Obstacle5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 162, 135 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Obstacle6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 135, 144 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 144 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 162, 144 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Obstacle7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 99, 126 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 126 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 99, 117 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 117 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 126 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 153, 126 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 117 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 153, 117 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 135, 126 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 126 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 135, 108 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 108 )
+scale = Vector2( 0.5, 1 )
+
+[node name="Obstacle21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 45, 108 )
+scale = Vector2( 2, 1 )
+constant_linear_velocity = Vector2( 126, 162 )
+
+[node name="Obstacle22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 144 )
+scale = Vector2( 1, 2 )
+constant_linear_velocity = Vector2( 126, 162 )
+
+[node name="Obstacle23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 18, 135 )
+scale = Vector2( 1, 2 )
+constant_linear_velocity = Vector2( 126, 162 )
+
+[node name="Obstacle24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 18, 90 )
+rotation = 0.785398
+scale = Vector2( 0.707, 0.707 )

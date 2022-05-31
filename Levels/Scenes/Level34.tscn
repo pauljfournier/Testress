@@ -1,0 +1,223 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Levels/Scenes/Level34.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Zones/Scenes/Shape_1x1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_1x5.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Zones/Scenes/Shape_container.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_2x2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://HUD/Scenes/VictoryingTimer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Obstacle/Scenes/Fix/ObstaclesTilesMap.tres" type="TileSet" id=8]
+[ext_resource path="res://Obstacle/Scenes/Moving/ChunkSliderLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Obstacle/Scenes/Moving/ChunkSliderRight.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/photos_2021_1_21_fst_creased-tissue-paper.jpg-295a8f897f62eacffe6c0c8b02876f32.stex"
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+[sub_resource type="PhysicsMaterial" id=4]
+
+[sub_resource type="PhysicsMaterial" id=5]
+
+[node name="Level" type="Node" groups=[
+"Levels",
+]]
+script = ExtResource( 1 )
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="Pieces"]
+position = Vector2( 240, 40 )
+
+[node name="RespawnTimer" type="Timer" parent="Pieces"]
+one_shot = true
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VictoryingCanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2( 6, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Terrain"]
+margin_left = -6.0
+margin_right = 474.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 130.77, 698.379 )
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Outlines" type="Node2D" parent="Terrain"]
+position = Vector2( 0, 144 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="wall_left" type="Node2D" parent="Terrain/Outlines"]
+position = Vector2( 0, 27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Obstacle2" parent="Terrain/Outlines/wall_left" instance=ExtResource( 6 )]
+rotation = 1.5708
+physics_material_override = SubResource( 2 )
+
+[node name="Obstacle3" parent="Terrain/Outlines/wall_left" instance=ExtResource( 4 )]
+position = Vector2( -18, 36 )
+rotation = 1.5708
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 3 )
+
+[node name="Obstacle4" parent="Terrain/Outlines/wall_left" instance=ExtResource( 6 )]
+position = Vector2( 0, 126 )
+rotation = 1.5708
+physics_material_override = SubResource( 2 )
+
+[node name="Obstacle5" parent="Terrain/Outlines/wall_left" instance=ExtResource( 4 )]
+position = Vector2( 0, 162 )
+rotation = 1.5708
+physics_material_override = SubResource( 3 )
+
+[node name="Obstacle6" parent="Terrain/Outlines/wall_left" instance=ExtResource( 6 )]
+position = Vector2( 0, 252 )
+rotation = 1.5708
+physics_material_override = SubResource( 2 )
+
+[node name="Obstacle7" parent="Terrain/Outlines/wall_left" instance=ExtResource( 4 )]
+position = Vector2( -18, 288 )
+rotation = 1.5708
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 3 )
+
+[node name="Obstacle8" parent="Terrain/Outlines/wall_left" instance=ExtResource( 6 )]
+position = Vector2( 0, 378 )
+rotation = 1.5708
+physics_material_override = SubResource( 2 )
+
+[node name="Obstacle9" parent="Terrain/Outlines/wall_left" instance=ExtResource( 4 )]
+position = Vector2( 0, 414 )
+rotation = 1.5708
+physics_material_override = SubResource( 3 )
+
+[node name="wall_right" type="Node2D" parent="Terrain/Outlines"]
+position = Vector2( 468, 27 )
+scale = Vector2( -1, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Obstacle2" parent="Terrain/Outlines/wall_right" instance=ExtResource( 6 )]
+position = Vector2( -0.000640869, 0 )
+rotation = 1.5708
+physics_material_override = SubResource( 4 )
+
+[node name="Obstacle3" parent="Terrain/Outlines/wall_right" instance=ExtResource( 4 )]
+position = Vector2( -17.9994, 36 )
+rotation = 1.5708
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 5 )
+
+[node name="Obstacle4" parent="Terrain/Outlines/wall_right" instance=ExtResource( 6 )]
+position = Vector2( -0.000640869, 126 )
+rotation = 1.5708
+physics_material_override = SubResource( 4 )
+
+[node name="Obstacle5" parent="Terrain/Outlines/wall_right" instance=ExtResource( 4 )]
+position = Vector2( -0.000640869, 162 )
+rotation = 1.5708
+physics_material_override = SubResource( 5 )
+
+[node name="Obstacle6" parent="Terrain/Outlines/wall_right" instance=ExtResource( 6 )]
+position = Vector2( -0.000640869, 252 )
+rotation = 1.5708
+physics_material_override = SubResource( 4 )
+
+[node name="Obstacle7" parent="Terrain/Outlines/wall_right" instance=ExtResource( 4 )]
+position = Vector2( -17.9994, 288 )
+rotation = 1.5708
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 5 )
+
+[node name="Obstacle8" parent="Terrain/Outlines/wall_right" instance=ExtResource( 6 )]
+position = Vector2( -0.000640869, 378 )
+rotation = 1.5708
+physics_material_override = SubResource( 4 )
+
+[node name="Obstacle9" parent="Terrain/Outlines/wall_right" instance=ExtResource( 4 )]
+position = Vector2( -0.000640869, 414 )
+rotation = 1.5708
+physics_material_override = SubResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="Terrain"]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 36, 36 )
+cell_custom_transform = Transform2D( 9, 0, 0, 9, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 1245184, 0, 262145, 1245235, 0, 262144, 1310720, 0, 131075, 1310771, 0, 1, 1376256, 0, 131075, 1376307, 0, 1, 1441792, 0, 327681, 1441843, 0, 327680, 4456448, 0, 196609, 4456449, 0, 3, 4456450, 0, 3, 4456451, 0, 3, 4456452, 0, 3, 4456453, 0, 0, 4456494, 0, 196609, 4456495, 0, 3, 4456496, 0, 3, 4456497, 0, 3, 4456498, 0, 3, 4456499, 0, 0, 4521984, 0, 1, 4521985, 0, 327681, 4521988, 0, 327680, 4521989, 0, 131075, 4522030, 0, 1, 4522031, 0, 327681, 4522034, 0, 327680, 4522035, 0, 131075, 4587520, 0, 1, 4587521, 0, 262145, 4587524, 0, 262144, 4587525, 0, 131075, 4587566, 0, 1, 4587567, 0, 262145, 4587570, 0, 262144, 4587571, 0, 131075, 4653056, 0, 131072, 4653057, 0, 131073, 4653058, 0, 131073, 4653059, 0, 131073, 4653060, 0, 131073, 4653061, 0, 196611, 4653102, 0, 131072, 4653103, 0, 131073, 4653104, 0, 131073, 4653105, 0, 131073, 4653106, 0, 131073, 4653107, 0, 196611, 5111809, 0, 196609, 5111810, 0, 3, 5111811, 0, 3, 5111812, 0, 0, 5111832, 0, 196609, 5111833, 0, 3, 5111834, 0, 3, 5111835, 0, 0, 5111855, 0, 196609, 5111856, 0, 3, 5111857, 0, 3, 5111858, 0, 0, 5177345, 0, 131072, 5177346, 0, 131073, 5177347, 0, 131073, 5177348, 0, 196611, 5177368, 0, 131072, 5177369, 0, 131073, 5177370, 0, 131073, 5177371, 0, 196611, 5177391, 0, 131072, 5177392, 0, 131073, 5177393, 0, 131073, 5177394, 0, 196611 )
+
+[node name="SliderLeft" parent="." instance=ExtResource( 9 )]
+position = Vector2( -75, 171 )
+speed = 4.0
+move_forward = 12.5
+move_backward = 12.5
+
+[node name="SliderLeft2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -210, 171 )
+speed = 4.0
+move_forward = 12.5
+move_backward = 12.5
+
+[node name="SliderRight" parent="." instance=ExtResource( 10 )]
+position = Vector2( 195, 171 )
+speed = 4.0
+move_forward = 12.5
+move_backward = 12.5
+
+[node name="SliderRight2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 330, 171 )
+speed = 4.0
+move_forward = 12.5
+move_backward = 12.5
+
+[node name="ShapePos" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0.882353, 0.0745098, 1 )
+position = Vector2( -3, 0 )
+
+[node name="Shape" parent="ShapePos" instance=ExtResource( 3 )]
+position = Vector2( 234, 684 )
+
+[node name="Shape2" parent="ShapePos" instance=ExtResource( 3 )]
+position = Vector2( 441, 684 )
+
+[node name="Shape3" parent="ShapePos" instance=ExtResource( 3 )]
+position = Vector2( 27, 684 )
+
+[connection signal="timeout" from="Pieces/RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
+[connection signal="victorying_finished" from="VictoryingCanvasLayer" to="." method="finish_game_victorying"]
+[connection signal="pause_game" from="HUD" to="." method="game_pause"]
+[connection signal="reset_game" from="HUD" to="." method="game_reset"]
+[connection signal="restart_game" from="HUD" to="." method="game_restart"]
+[connection signal="resume_game" from="HUD" to="." method="game_resume"]
+[connection signal="submit_game" from="HUD" to="." method="game_submit"]
+[connection signal="activated" from="ShapePos" to="." method="_on_pos_percent_update"]
+[connection signal="desactivated" from="ShapePos" to="." method="_on_pos_percent_update"]

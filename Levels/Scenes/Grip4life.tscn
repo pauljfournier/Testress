@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Fix/ObstaclesTilesMap.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Scenes/Grip4life.gd" type="Script" id=2]
+[ext_resource path="res://HUD/Scenes/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD/Scenes/VictoryingTimer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Zones/Scenes/Shape_container.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Zones/Scenes/Shape_1x1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Global/assets/images/backgrounds/photos_2020_4_17_fst_gray-plaster.jpg" type="Texture" id=9]
+
+[node name="Level" type="Node" groups=[
+"Levels",
+]]
+script = ExtResource( 2 )
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="Pieces"]
+position = Vector2( 240, 40 )
+
+[node name="RespawnTimer" type="Timer" parent="Pieces"]
+one_shot = true
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VictoryingCanvasLayer" parent="." instance=ExtResource( 6 )]
+
+[node name="HUD" parent="." groups=[
+"HUD",
+] instance=ExtResource( 5 )]
+pause_mode = 2
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2( 6, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Terrain"]
+margin_left = -6.0
+margin_right = 474.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 130.77, 698.379 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="TileMap" type="TileMap" parent="Terrain"]
+position = Vector2( 0, 54 )
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 36, 36 )
+cell_custom_transform = Transform2D( 9, 0, 0, 9, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 1703961, 0, 196609, 1703962, 0, 0, 1769496, 0, 262144, 1769497, 0, 196610, 1769498, 0, 65536, 1769499, 0, 262145, 1835031, 0, 262144, 1835032, 0, 65537, 1835033, 0, 2, 1835034, 0, 65537, 1835035, 0, 2, 1835036, 0, 262145, 1900566, 0, 196609, 1900567, 0, 65537, 1900568, 0, 65538, 1900569, 0, 65538, 1900570, 0, 65538, 1900571, 0, 65538, 1900572, 0, 2, 1900573, 0, 0, 1966102, 0, 131072, 1966103, 0, 131073, 1966104, 0, 131074, 1966105, 0, 65538, 1966106, 0, 65538, 1966107, 0, 65539, 1966108, 0, 131073, 1966109, 0, 196611, 2031640, 0, 1, 2031641, 0, 65538, 2031642, 0, 65538, 2031643, 0, 131075, 2097176, 0, 1, 2097177, 0, 65538, 2097178, 0, 65538, 2097179, 0, 131075, 2162712, 0, 1, 2162713, 0, 65538, 2162714, 0, 65538, 2162715, 0, 131075, 2228248, 0, 1, 2228249, 0, 65538, 2228250, 0, 65538, 2228251, 0, 131075, 2293782, 0, 196609, 2293783, 0, 3, 2293784, 0, 65537, 2293785, 0, 65538, 2293786, 0, 65538, 2293787, 0, 2, 2293788, 0, 3, 2293789, 0, 0, 2359318, 0, 1, 2359319, 0, 65538, 2359320, 0, 327682, 2359321, 0, 65538, 2359322, 0, 65538, 2359323, 0, 65538, 2359324, 0, 65538, 2359325, 0, 131075, 2424854, 0, 1, 2424855, 0, 65538, 2424856, 0, 65538, 2424857, 0, 65538, 2424858, 0, 65538, 2424859, 0, 327682, 2424860, 0, 65538, 2424861, 0, 131075, 2490390, 0, 131072, 2490391, 0, 131073, 2490392, 0, 131074, 2490393, 0, 65538, 2490394, 0, 65538, 2490395, 0, 65539, 2490396, 0, 131073, 2490397, 0, 196611, 2555928, 0, 1, 2555929, 0, 65538, 2555930, 0, 65538, 2555931, 0, 131075, 2621464, 0, 1, 2621465, 0, 65538, 2621466, 0, 65538, 2621467, 0, 131075, 2687000, 0, 1, 2687001, 0, 65538, 2687002, 0, 65538, 2687003, 0, 131075, 2752536, 0, 1, 2752537, 0, 65538, 2752538, 0, 65538, 2752539, 0, 131075, 2818072, 0, 1, 2818073, 0, 65538, 2818074, 0, 65538, 2818075, 0, 131075, 2883608, 0, 1, 2883609, 0, 65538, 2883610, 0, 65538, 2883611, 0, 131075, 2949144, 0, 1, 2949145, 0, 65538, 2949146, 0, 65538, 2949147, 0, 131075, 3014680, 0, 1, 3014681, 0, 65538, 3014682, 0, 65538, 3014683, 0, 131075, 3080216, 0, 1, 3080217, 0, 65538, 3080218, 0, 65538, 3080219, 0, 131075, 3145752, 0, 1, 3145753, 0, 65538, 3145754, 0, 65538, 3145755, 0, 131075, 3211287, 0, 262144, 3211288, 0, 65537, 3211289, 0, 65538, 3211290, 0, 65538, 3211291, 0, 2, 3211292, 0, 262145, 3276822, 0, 196609, 3276823, 0, 65537, 3276824, 0, 65538, 3276825, 0, 65538, 3276826, 0, 65538, 3276827, 0, 65538, 3276828, 0, 2, 3276829, 0, 0, 3342358, 0, 131072, 3342359, 0, 131073, 3342360, 0, 131074, 3342361, 0, 65538, 3342362, 0, 65538, 3342363, 0, 65539, 3342364, 0, 131073, 3342365, 0, 196611, 3407896, 0, 1, 3407897, 0, 65538, 3407898, 0, 65538, 3407899, 0, 131075, 3473432, 0, 1, 3473433, 0, 65538, 3473434, 0, 65538, 3473435, 0, 131075, 3538966, 0, 196609, 3538967, 0, 3, 3538968, 0, 65537, 3538969, 0, 65538, 3538970, 0, 65538, 3538971, 0, 2, 3538972, 0, 3, 3538973, 0, 0, 3604502, 0, 131072, 3604503, 0, 131073, 3604504, 0, 131073, 3604505, 0, 131074, 3604506, 0, 65539, 3604507, 0, 131073, 3604508, 0, 131073, 3604509, 0, 196611, 3670041, 0, 327680, 3670042, 0, 327681 )
+
+[node name="ShapePos" parent="." instance=ExtResource( 7 )]
+modulate = Color( 0, 0.882353, 0.0745098, 1 )
+position = Vector2( -3, 0 )
+
+[node name="Shape" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 207, 522 )
+negative = false
+
+[node name="Shape2" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 207, 333 )
+negative = false
+
+[node name="Shape3" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 261, 351 )
+negative = false
+
+[node name="Shape4" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 261, 333 )
+negative = false
+
+[node name="Shape5" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 207, 351 )
+negative = false
+
+[node name="Shape6" parent="ShapePos" instance=ExtResource( 8 )]
+position = Vector2( 261, 522 )
+negative = false
+
+[connection signal="timeout" from="Pieces/RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
+[connection signal="victorying_finished" from="VictoryingCanvasLayer" to="." method="finish_game_victorying"]
+[connection signal="pause_game" from="HUD" to="." method="game_pause"]
+[connection signal="reset_game" from="HUD" to="." method="game_reset"]
+[connection signal="restart_game" from="HUD" to="." method="game_restart"]
+[connection signal="resume_game" from="HUD" to="." method="game_resume"]
+[connection signal="submit_game" from="HUD" to="." method="game_submit"]
+[connection signal="activated" from="ShapePos" to="." method="_on_pos_percent_update"]
+[connection signal="desactivated" from="ShapePos" to="." method="_on_pos_percent_update"]

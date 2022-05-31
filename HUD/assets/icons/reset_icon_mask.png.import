@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/reset_icon_mask.png-a708058d22760ce3dcda804724718c66.res"
+
+[deps]
+
+source_file="res://HUD/assets/icons/reset_icon_mask.png"
+dest_files=[ "res://.import/reset_icon_mask.png-a708058d22760ce3dcda804724718c66.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

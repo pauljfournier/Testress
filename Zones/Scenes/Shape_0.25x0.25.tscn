@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Zones/Scenes/Shape.gd" type="Script" id=1]
+[ext_resource path="res://Zones/Scenes/ShapeSubCell.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 2 )
+
+[node name="Shape" type="Node2D" groups=[
+"Shapes",
+]]
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="0_0" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0_0"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="0_0"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="0_0" to="0_0" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="0_0" to="0_0" method="_on_ShapeSubCell_body_exited"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/pause_icon_mask.png-8f2e7562f91df7f11f93b5b7692d4849.res"
+
+[deps]
+
+source_file="res://HUD/assets/icons/pause_icon_mask.png"
+dest_files=[ "res://.import/pause_icon_mask.png-8f2e7562f91df7f11f93b5b7692d4849.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

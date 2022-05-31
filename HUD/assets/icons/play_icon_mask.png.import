@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/play_icon_mask.png-e438dd68fe91128d6780627b5d06fb21.res"
+
+[deps]
+
+source_file="res://HUD/assets/icons/play_icon_mask.png"
+dest_files=[ "res://.import/play_icon_mask.png-e438dd68fe91128d6780627b5d06fb21.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

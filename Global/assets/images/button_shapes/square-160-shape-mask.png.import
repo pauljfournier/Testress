@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/square-160-shape-mask.png-99d41a5823b34bde531b4ace4a8193c7.res"
+
+[deps]
+
+source_file="res://Global/assets/images/button_shapes/square-160-shape-mask.png"
+dest_files=[ "res://.import/square-160-shape-mask.png-99d41a5823b34bde531b4ace4a8193c7.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

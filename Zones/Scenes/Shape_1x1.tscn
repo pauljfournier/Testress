@@ -1,0 +1,335 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Zones/Scenes/Shape.gd" type="Script" id=1]
+[ext_resource path="res://Zones/Scenes/ShapeSubCell.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.8, 1.8 )
+
+[node name="Shape" type="Node2D" groups=[
+"Shapes",
+]]
+z_index = 1
+script = ExtResource( 1 )
+negative = null
+
+[node name="0_0" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0_0"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="0_0"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0_1" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 0, 4.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0_1"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="0_1"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0_2" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 0, 9 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0_2"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="0_2"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0_3" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 0, 13.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0_3"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="0_3"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_0" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 4.5, 0 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1_0"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="1_0"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_1" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 4.5, 4.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1_1"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="1_1"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_2" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 4.5, 9 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1_2"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="1_2"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_3" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 4.5, 13.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1_3"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="1_3"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2_0" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 9, 0 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2_0"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="2_0"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2_1" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 9, 4.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2_1"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="2_1"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2_2" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 9, 9 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2_2"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="2_2"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2_3" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 9, 13.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2_3"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="2_3"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_0" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 13.5, 0 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3_0"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="3_0"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_1" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 13.5, 4.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3_1"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="3_1"]
+margin_top = -0.0278406
+margin_right = 4.5
+margin_bottom = 4.47216
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_2" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 13.5, 9 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3_2"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="3_2"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_3" type="Area2D" parent="." groups=[
+"SubCells",
+]]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 13.5, 13.5 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3_3"]
+position = Vector2( 2.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="3_3"]
+margin_right = 4.5
+margin_bottom = 4.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="0_0" to="0_0" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="0_0" to="0_0" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="0_1" to="0_1" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="0_1" to="0_1" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="0_2" to="0_2" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="0_2" to="0_2" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="0_3" to="0_3" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="0_3" to="0_3" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="1_0" to="1_0" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="1_0" to="1_0" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="1_1" to="1_1" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="1_1" to="1_1" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="1_2" to="1_2" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="1_2" to="1_2" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="1_3" to="1_3" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="1_3" to="1_3" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="2_0" to="2_0" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="2_0" to="2_0" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="2_1" to="2_1" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="2_1" to="2_1" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="2_2" to="2_2" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="2_2" to="2_2" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="2_3" to="2_3" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="2_3" to="2_3" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="3_0" to="3_0" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="3_0" to="3_0" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="3_1" to="3_1" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="3_1" to="3_1" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="3_2" to="3_2" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="3_2" to="3_2" method="_on_ShapeSubCell_body_exited"]
+[connection signal="body_entered" from="3_3" to="3_3" method="_on_ShapeSubCell_body_entered"]
+[connection signal="body_exited" from="3_3" to="3_3" method="_on_ShapeSubCell_body_exited"]

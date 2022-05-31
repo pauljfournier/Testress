@@ -1,0 +1,504 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Fix/ObstaclesTilesMap.tres" type="TileSet" id=1]
+[ext_resource path="res://HUD/Scenes/VictoryingTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstacle/Scenes/Terrrain/wall_right.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_1x5.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Obstacle/Scenes/Terrrain/wall_left.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Zones/Scenes/Shape_1x1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Zones/Scenes/Shape_container.tscn" type="PackedScene" id=7]
+[ext_resource path="res://HUD/Scenes/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Global/assets/images/backgrounds/photos_2020_4_17_fst_gray-plaster.jpg" type="Texture" id=9]
+[ext_resource path="res://Levels/Scenes/Slicy.gd" type="Script" id=10]
+[ext_resource path="res://Obstacle/Scenes/Fix/Block_2x2.tscn" type="PackedScene" id=11]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+[node name="Level" type="Node" groups=[
+"Levels",
+]]
+script = ExtResource( 10 )
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="Pieces"]
+position = Vector2( 240, 40 )
+
+[node name="RespawnTimer" type="Timer" parent="Pieces"]
+one_shot = true
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VictoryingCanvasLayer" parent="." instance=ExtResource( 2 )]
+
+[node name="HUD" parent="." groups=[
+"HUD",
+] instance=ExtResource( 8 )]
+pause_mode = 2
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2( 6, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Terrain"]
+margin_left = -6.0
+margin_right = 474.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 130.77, 698.379 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Outlines" type="Node2D" parent="Terrain"]
+position = Vector2( -9, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="floor" type="Node2D" parent="Terrain/Outlines"]
+position = Vector2( 9, 702 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Obstacle2" parent="Terrain/Outlines/floor" instance=ExtResource( 11 )]
+position = Vector2( 153, 0 )
+physics_material_override = SubResource( 1 )
+
+[node name="Obstacle3" parent="Terrain/Outlines/floor" instance=ExtResource( 4 )]
+position = Vector2( 189, 18 )
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 2 )
+
+[node name="Obstacle4" parent="Terrain/Outlines/floor" instance=ExtResource( 11 )]
+position = Vector2( 279, 0 )
+physics_material_override = SubResource( 1 )
+
+[node name="wall_left" parent="Terrain/Outlines" instance=ExtResource( 5 )]
+position = Vector2( 9, 0 )
+
+[node name="wall_right" parent="Terrain/Outlines" instance=ExtResource( 3 )]
+position = Vector2( 477, 0 )
+
+[node name="TileMap" type="TileMap" parent="Terrain"]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 36, 36 )
+cell_custom_transform = Transform2D( 9, 0, 0, 9, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 2818050, 0, 196609, 2818051, 0, 3, 2818052, 0, 3, 2818053, 0, 0, 2818054, 0, 196609, 2818055, 0, 3, 2818056, 0, 3, 2818057, 0, 0, 2818090, 0, 196609, 2818091, 0, 3, 2818092, 0, 3, 2818093, 0, 0, 2818094, 0, 196609, 2818095, 0, 3, 2818096, 0, 3, 2818097, 0, 0, 2883586, 0, 131072, 2883587, 0, 131073, 2883588, 0, 131073, 2883589, 0, 196611, 2883590, 0, 131072, 2883591, 0, 131073, 2883592, 0, 131073, 2883593, 0, 196611, 2883626, 0, 131072, 2883627, 0, 131073, 2883628, 0, 131073, 2883629, 0, 196611, 2883630, 0, 131072, 2883631, 0, 131073, 2883632, 0, 131073, 2883633, 0, 196611, 3407891, 0, 196609, 3407892, 0, 0, 3407897, 0, 196609, 3407898, 0, 0, 3407903, 0, 196609, 3407904, 0, 0, 3473427, 0, 1, 3473428, 0, 131075, 3473433, 0, 1, 3473434, 0, 131075, 3473439, 0, 1, 3473440, 0, 131075, 3538963, 0, 1, 3538964, 0, 131075, 3538969, 0, 1, 3538970, 0, 131075, 3538975, 0, 1, 3538976, 0, 131075, 3604499, 0, 1, 3604500, 0, 131075, 3604505, 0, 1, 3604506, 0, 131075, 3604511, 0, 1, 3604512, 0, 131075, 3670035, 0, 1, 3670036, 0, 131075, 3670041, 0, 1, 3670042, 0, 131075, 3670047, 0, 1, 3670048, 0, 131075, 3735571, 0, 1, 3735572, 0, 131075, 3735577, 0, 1, 3735578, 0, 131075, 3735583, 0, 1, 3735584, 0, 131075, 3801107, 0, 1, 3801108, 0, 131075, 3801113, 0, 1, 3801114, 0, 131075, 3801119, 0, 1, 3801120, 0, 131075, 3866643, 0, 131072, 3866644, 0, 196611, 3866649, 0, 131072, 3866650, 0, 196611, 3866655, 0, 131072, 3866656, 0, 196611 )
+
+[node name="ShapePos" parent="." instance=ExtResource( 7 )]
+modulate = Color( 0, 0.882353, 0.0745098, 1 )
+position = Vector2( -3, 0 )
+
+[node name="Shape" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 189, 684 )
+negative = false
+
+[node name="Shape2" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 189, 666 )
+negative = false
+
+[node name="Shape3" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 171, 666 )
+negative = false
+
+[node name="Shape4" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 171, 684 )
+negative = false
+
+[node name="Shape5" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 189, 648 )
+negative = false
+
+[node name="Shape6" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 189, 630 )
+negative = false
+
+[node name="Shape7" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 171, 630 )
+negative = false
+
+[node name="Shape8" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 171, 648 )
+negative = false
+
+[node name="Shape9" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 243, 684 )
+negative = false
+
+[node name="Shape10" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 243, 666 )
+negative = false
+
+[node name="Shape11" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 225, 666 )
+negative = false
+
+[node name="Shape12" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 225, 684 )
+negative = false
+
+[node name="Shape13" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 243, 648 )
+negative = false
+
+[node name="Shape14" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 243, 630 )
+negative = false
+
+[node name="Shape15" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 225, 630 )
+negative = false
+
+[node name="Shape16" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 225, 648 )
+negative = false
+
+[node name="Shape17" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 297, 684 )
+negative = false
+
+[node name="Shape18" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 297, 666 )
+negative = false
+
+[node name="Shape19" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 279, 666 )
+negative = false
+
+[node name="Shape20" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 279, 684 )
+negative = false
+
+[node name="Shape21" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 297, 648 )
+negative = false
+
+[node name="Shape22" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 297, 630 )
+negative = false
+
+[node name="Shape23" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 279, 630 )
+negative = false
+
+[node name="Shape24" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 279, 648 )
+negative = false
+
+[node name="Shape25" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 45, 369 )
+negative = false
+
+[node name="Shape26" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 45, 351 )
+negative = false
+
+[node name="Shape27" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 27, 351 )
+negative = false
+
+[node name="Shape28" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 27, 369 )
+negative = false
+
+[node name="Shape29" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 45, 333 )
+negative = false
+
+[node name="Shape30" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 45, 315 )
+negative = false
+
+[node name="Shape31" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 27, 315 )
+negative = false
+
+[node name="Shape32" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 27, 333 )
+negative = false
+
+[node name="Shape33" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 441, 369 )
+negative = false
+
+[node name="Shape34" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 441, 351 )
+negative = false
+
+[node name="Shape35" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 423, 351 )
+negative = false
+
+[node name="Shape36" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 423, 369 )
+negative = false
+
+[node name="Shape37" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 441, 333 )
+negative = false
+
+[node name="Shape38" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 441, 315 )
+negative = false
+
+[node name="Shape39" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 387, 333 )
+negative = false
+
+[node name="Shape40" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 423, 333 )
+negative = false
+
+[node name="Shape41" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 81, 369 )
+negative = false
+
+[node name="Shape42" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 387, 351 )
+negative = false
+
+[node name="Shape43" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 405, 333 )
+negative = false
+
+[node name="Shape44" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 405, 369 )
+negative = false
+
+[node name="Shape45" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 405, 351 )
+negative = false
+
+[node name="Shape46" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 387, 369 )
+negative = false
+
+[node name="Shape47" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 387, 315 )
+negative = false
+
+[node name="Shape48" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 423, 315 )
+negative = false
+
+[node name="Shape49" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 405, 315 )
+negative = false
+
+[node name="Shape50" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 63, 333 )
+negative = false
+
+[node name="Shape51" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 63, 351 )
+negative = false
+
+[node name="Shape52" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 81, 333 )
+negative = false
+
+[node name="Shape53" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 81, 351 )
+negative = false
+
+[node name="Shape54" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 63, 369 )
+negative = false
+
+[node name="Shape55" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 63, 315 )
+negative = false
+
+[node name="Shape56" parent="ShapePos" instance=ExtResource( 6 )]
+position = Vector2( 81, 315 )
+negative = false
+
+[node name="ShapeNeg" parent="." instance=ExtResource( 7 )]
+modulate = Color( 0.780392, 0, 0, 1 )
+position = Vector2( -3, 0 )
+
+[node name="Shape" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 153, 684 )
+negative = false
+
+[node name="Shape2" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 153, 666 )
+negative = false
+
+[node name="Shape3" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 153, 648 )
+negative = false
+
+[node name="Shape4" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 153, 630 )
+negative = false
+
+[node name="Shape5" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 207, 684 )
+negative = false
+
+[node name="Shape6" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 207, 666 )
+negative = false
+
+[node name="Shape7" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 207, 648 )
+negative = false
+
+[node name="Shape8" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 207, 630 )
+negative = false
+
+[node name="Shape9" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 261, 684 )
+negative = false
+
+[node name="Shape10" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 261, 666 )
+negative = false
+
+[node name="Shape11" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 261, 648 )
+negative = false
+
+[node name="Shape12" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 261, 630 )
+negative = false
+
+[node name="Shape13" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 315, 684 )
+negative = false
+
+[node name="Shape14" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 315, 666 )
+negative = false
+
+[node name="Shape15" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 315, 648 )
+negative = false
+
+[node name="Shape16" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 315, 630 )
+negative = false
+
+[node name="Shape17" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 459, 369 )
+negative = false
+
+[node name="Shape18" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 459, 351 )
+negative = false
+
+[node name="Shape19" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 459, 333 )
+negative = false
+
+[node name="Shape20" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 459, 315 )
+negative = false
+
+[node name="Shape21" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 369, 369 )
+negative = false
+
+[node name="Shape22" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 369, 351 )
+negative = false
+
+[node name="Shape23" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 369, 333 )
+negative = false
+
+[node name="Shape24" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 369, 315 )
+negative = false
+
+[node name="Shape25" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 9, 369 )
+negative = false
+
+[node name="Shape26" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 9, 351 )
+negative = false
+
+[node name="Shape27" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 9, 333 )
+negative = false
+
+[node name="Shape28" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 9, 315 )
+negative = false
+
+[node name="Shape29" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 99, 369 )
+negative = false
+
+[node name="Shape30" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 99, 351 )
+negative = false
+
+[node name="Shape31" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 99, 333 )
+negative = false
+
+[node name="Shape32" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 99, 315 )
+negative = false
+
+[node name="Shape33" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 27, 297 )
+negative = false
+
+[node name="Shape34" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 45, 297 )
+negative = false
+
+[node name="Shape35" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 63, 297 )
+negative = false
+
+[node name="Shape36" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 81, 297 )
+negative = false
+
+[node name="Shape37" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 387, 297 )
+negative = false
+
+[node name="Shape38" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 405, 297 )
+negative = false
+
+[node name="Shape39" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 423, 297 )
+negative = false
+
+[node name="Shape40" parent="ShapeNeg" instance=ExtResource( 6 )]
+position = Vector2( 441, 297 )
+negative = false
+
+[connection signal="timeout" from="Pieces/RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
+[connection signal="victorying_finished" from="VictoryingCanvasLayer" to="." method="finish_game_victorying"]
+[connection signal="pause_game" from="HUD" to="." method="game_pause"]
+[connection signal="reset_game" from="HUD" to="." method="game_reset"]
+[connection signal="restart_game" from="HUD" to="." method="game_restart"]
+[connection signal="resume_game" from="HUD" to="." method="game_resume"]
+[connection signal="submit_game" from="HUD" to="." method="game_submit"]
+[connection signal="activated" from="ShapePos" to="." method="_on_pos_percent_update"]
+[connection signal="desactivated" from="ShapePos" to="." method="_on_pos_percent_update"]
+[connection signal="activated" from="ShapeNeg" to="." method="_on_neg_percent_update"]
+[connection signal="desactivated" from="ShapeNeg" to="." method="_on_neg_percent_update"]

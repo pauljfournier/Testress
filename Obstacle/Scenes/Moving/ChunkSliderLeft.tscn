@@ -1,0 +1,218 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Moving/Slider.gd" type="Script" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/dirty_square.png-0d57b419587df051ca70b5c31f9cf4a6.stex"
+
+[node name="Slider" type="KinematicBody2D" groups=[
+"Movings",
+]]
+modulate = Color( 0.458824, 0.541176, 0.552941, 1 )
+script = ExtResource( 1 )
+move_forward = 6.5
+move_backward = 0.0
+flipping = false
+
+[node name="Sprites" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Block2" type="Sprite" parent="Sprites"]
+position = Vector2( 315, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block3" type="Sprite" parent="Sprites"]
+position = Vector2( 315, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -3.8147e-05, -75 )
+
+[node name="Block4" type="Sprite" parent="Sprites"]
+position = Vector2( 315, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -225, -75 )
+
+[node name="Block5" type="Sprite" parent="Sprites"]
+position = Vector2( 234, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block6" type="Sprite" parent="Sprites"]
+position = Vector2( 234, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -3.8147e-05, -75 )
+
+[node name="Block7" type="Sprite" parent="Sprites"]
+position = Vector2( 234, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -225, -75 )
+
+[node name="Block8" type="Sprite" parent="Sprites"]
+position = Vector2( 153, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block9" type="Sprite" parent="Sprites"]
+position = Vector2( 153, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -3.8147e-05, -75 )
+
+[node name="Block10" type="Sprite" parent="Sprites"]
+position = Vector2( 153, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -225, -75 )
+
+[node name="Block11" type="Sprite" parent="Sprites"]
+position = Vector2( 72, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block12" type="Sprite" parent="Sprites"]
+position = Vector2( 72, 468 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -3.8147e-05, -75 )
+
+[node name="Block13" type="Sprite" parent="Sprites"]
+position = Vector2( 45, 459 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 0.000244141, 0 )
+
+[node name="Block1" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+
+[node name="Block14" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 0.131104, -214.797 )
+
+[node name="Block15" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 4.35388, -417.292 )
+
+[node name="Block16" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 4.48486, -632.089 )
+
+[node name="Block17" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 0.524109, -859.188 )
+
+[node name="Block18" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 0.655151, -1073.98 )
+
+[node name="Block19" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 4.87787, -1276.48 )
+
+[node name="Block20" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 5.00891, -1491.28 )
+
+[node name="Block21" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 1.04816, -1718.37 )
+
+[node name="Block22" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 1.17917, -1933.17 )
+
+[node name="Block23" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 5.40195, -2135.67 )
+
+[node name="Block24" type="Sprite" parent="Sprites"]
+position = Vector2( 324, 432 )
+rotation = -0.464258
+scale = Vector2( 0.187383, 0.187383 )
+texture = SubResource( 1 )
+offset = Vector2( 5.53302, -2350.46 )
+
+[node name="Block25" type="Sprite" parent="Sprites"]
+position = Vector2( 99, 27 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block26" type="Sprite" parent="Sprites"]
+position = Vector2( 99, 27 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -3.8147e-05, -75 )
+
+[node name="Block27" type="Sprite" parent="Sprites"]
+position = Vector2( 99, 27 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( -225, -75 )
+
+[node name="Block28" type="Sprite" parent="Sprites"]
+position = Vector2( 18, 27 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 225, -75 )
+
+[node name="Block29" type="Sprite" parent="Sprites"]
+position = Vector2( 18, 459 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 0.000244141, 0 )
+
+[node name="Block30" type="Sprite" parent="Sprites"]
+position = Vector2( 18, 18 )
+scale = Vector2( 0.12, 0.12 )
+texture = SubResource( 1 )
+offset = Vector2( 0.000244141, 0 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=[
+"CollisionShapes",
+]]
+visible = false
+polygon = PoolVector2Array( 0, 0, 144, 0, 144, 9, 360, 441, 360, 477, 0, 477 )

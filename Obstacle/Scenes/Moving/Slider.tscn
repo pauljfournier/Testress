@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Moving/Slider.gd" type="Script" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/icons8-square-160.png-bc77a1d047aca36c1a47b4244044eeb1.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/icons8-square-160.png-bc77a1d047aca36c1a47b4244044eeb1.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/icons8-square-160.png-bc77a1d047aca36c1a47b4244044eeb1.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/icons8-square-160.png-bc77a1d047aca36c1a47b4244044eeb1.stex"
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.5, 8.75 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 3.25
+height = 11.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 1.625
+height = 14.375
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.813, 2.625 )
+
+[node name="Slider" type="KinematicBody2D" groups=[
+"Movings",
+]]
+modulate = Color( 0.458824, 0.541176, 0.552941, 1 )
+script = ExtResource( 1 )
+move_forward = 4.0
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Block1" type="Sprite" parent="Sprites"]
+scale = Vector2( 0.125, 0.125 )
+texture = SubResource( 1 )
+
+[node name="Block2" type="Sprite" parent="Sprites"]
+scale = Vector2( 0.063, 0.063 )
+texture = SubResource( 2 )
+
+[node name="Block3" type="Sprite" parent="Sprites"]
+position = Vector2( -13.5, -4.5 )
+scale = Vector2( 0.063, 0.063 )
+texture = SubResource( 3 )
+
+[node name="Block4" type="Sprite" parent="Sprites"]
+position = Vector2( -22.5, -4.5 )
+scale = Vector2( 0.063, 0.063 )
+texture = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+position = Vector2( 5.5, 0 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+position = Vector2( -5.5, 0 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+position = Vector2( -18, -1.875 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+position = Vector2( -18, -7.125 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." groups=[
+"CollisionShapes",
+]]
+position = Vector2( -18, -4.5 )
+shape = SubResource( 8 )

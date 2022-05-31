@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Obstacle/Scenes/Fix/ObstaclesTilesMap.tres" type="TileSet" id=1]
+[ext_resource path="res://HUD/Scenes/VictoryingTimer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HUD/Scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Global/assets/images/backgrounds/photos_2020_4_17_fst_gray-plaster.jpg" type="Texture" id=9]
+[ext_resource path="res://Levels/Scenes/Equilibrium.gd" type="Script" id=10]
+
+[node name="Level" type="Node" groups=[
+"Levels",
+]]
+script = ExtResource( 10 )
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="Pieces"]
+position = Vector2( 240, 40 )
+
+[node name="RespawnTimer" type="Timer" parent="Pieces"]
+one_shot = true
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VictoryingCanvasLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="HUD" parent="." groups=[
+"HUD",
+] instance=ExtResource( 6 )]
+pause_mode = 2
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2( 6, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Terrain"]
+margin_left = -6.0
+margin_right = 474.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 130.77, 698.379 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="TileMap" type="TileMap" parent="Terrain"]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 36, 36 )
+cell_custom_transform = Transform2D( 9, 0, 0, 9, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 4784150, 0, 196609, 4784151, 0, 3, 4784152, 0, 3, 4784153, 0, 0, 4784154, 0, 196609, 4784155, 0, 3, 4784156, 0, 3, 4784157, 0, 0, 4849686, 0, 131072, 4849687, 0, 131073, 4849688, 0, 131074, 4849689, 0, 131075, 4849690, 0, 1, 4849691, 0, 65539, 4849692, 0, 131073, 4849693, 0, 196611, 4915224, 0, 131072, 4915225, 0, 196611, 4915226, 0, 131072, 4915227, 0, 196611 )
+
+[connection signal="timeout" from="Pieces/RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
+[connection signal="victorying_finished" from="VictoryingCanvasLayer" to="." method="finish_game_victorying"]
+[connection signal="pause_game" from="HUD" to="." method="game_pause"]
+[connection signal="reset_game" from="HUD" to="." method="game_reset"]
+[connection signal="restart_game" from="HUD" to="." method="game_restart"]
+[connection signal="resume_game" from="HUD" to="." method="game_resume"]
+[connection signal="submit_game" from="HUD" to="." method="game_submit"]
